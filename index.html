@@ -10,27 +10,10 @@
         iframe {overflow: hidden;border: none;}
         #wrapper {width: 60vw!important;height: 60vh!important;transform-origin: 0 0;}
     </style>  
-	<script>
-		function clickToLanding() {
-			console.log('clickToLanding');
-			if ("zadsJSInterface" in window) { // Serving on ZADs Native. Default: LandingPage On CRM
-				// try {
-				// 	addJavascriptInterface(Interface, "zadsJSInterface");
-				// } catch(err){console.log(err)};
-				
-				// window.open("zads://action_target", "_blank");
-                window.open(window.clickTag, "_blank");
-			}
-			else if ("zadsTarget" in window) { // Serving on ZADs Native. Target is LandingPage
-				window.open("zads://action_click?target=" + window.zadsTarget, "_blank");
-			}  
-			else if ("clickTag" in window) { // Serving on Google Ads
-				window.open(window.clickTag, "_blank");
-			} 
-		}
+	<script>		
 	</script>
 </head>
-<body onclick='clickToLanding();'>
+<body>
 <div id="wrapper">
 <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
 <script>
