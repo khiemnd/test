@@ -14,11 +14,12 @@
 		function clickToLanding() {
 			console.log('clickToLanding');
 			if ("zadsJSInterface" in window) { // Serving on ZADs Native. Default: LandingPage On CRM
-				try {
-					addJavascriptInterface(Interface, "zadsJSInterface");
-				} catch(err){console.log(err)};
+				// try {
+				// 	addJavascriptInterface(Interface, "zadsJSInterface");
+				// } catch(err){console.log(err)};
 				
-				window.open("zads://action_target", "_blank");
+				// window.open("zads://action_target", "_blank");
+                window.open(window.clickTag, "_blank");
 			}
 			else if ("zadsTarget" in window) { // Serving on ZADs Native. Target is LandingPage
 				window.open("zads://action_click?target=" + window.zadsTarget, "_blank");
