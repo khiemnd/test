@@ -4,7 +4,7 @@
     <title>Adtima</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=4fA_JSglGBE-1-123AnetLlVSQiUpWsWMU0q8goaCHjAg5id9tLErsO_t7YeGfzyu4TU48apCMuCURhcnKw6wDKCcxoF2SGM_fOrHUWpjlihehArcP3ucPAugNvK-vTT2P9c2riaoSj7bB4Johe7rlh2Tkra6UMGSeQEcIYzOO8" charset="UTF-8"></script><style>
+    <style>
         * {margin: 0;padding: 0}
         html,body {height: 100%;overflow: hidden;background-color: white;}
         iframe {overflow: hidden;border: none;}
@@ -14,6 +14,10 @@
 		function clickToLanding() {
 			console.log('clickToLanding');
 			if ("zadsJSInterface" in window) { // Serving on ZADs Native. Default: LandingPage On CRM
+				try {
+					addJavascriptInterface(Interface, "zadsJSInterface");
+				} catch(err){console.log(err)};
+				
 				window.open("zads://action_target", "_blank");
 			}
 			else if ("zadsTarget" in window) { // Serving on ZADs Native. Target is LandingPage
@@ -25,8 +29,8 @@
 		}
 	</script>
 </head>
-<body>
-<div id="wrapper" onclick='clickToLanding();'>
+<body onclick='clickToLanding();'>
+<div id="wrapper">
 <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
 <script>
  var googletag = googletag || {};
