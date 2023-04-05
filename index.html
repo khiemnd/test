@@ -4,21 +4,35 @@
     <title>Adtima</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style>
+    <script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=4fA_JSglGBE-1-123AnetLlVSQiUpWsWMU0q8goaCHjAg5id9tLErsO_t7YeGfzyu4TU48apCMuCURhcnKw6wDKCcxoF2SGM_fOrHUWpjlihehArcP3ucPAugNvK-vTT2P9c2riaoSj7bB4Johe7rlh2Tkra6UMGSeQEcIYzOO8" charset="UTF-8"></script><style>
         * {margin: 0;padding: 0}
         html,body {height: 100%;overflow: hidden;background-color: white;}
         iframe {overflow: hidden;border: none;}
         #wrapper {width: 60vw!important;height: 60vh!important;transform-origin: 0 0;}
-    </style>   
+    </style>  
+	<script>
+		function clickToLanding() {
+			console.log('clickToLanding');
+			if ("zadsJSInterface" in window) { // Serving on ZADs Native. Default: LandingPage On CRM
+				window.open("zads://action_target", "_blank");
+			}
+			else if ("zadsTarget" in window) { // Serving on ZADs Native. Target is LandingPage
+				window.open("zads://action_click?target=" + window.zadsTarget, "_blank");
+			}  
+			else if ("clickTag" in window) { // Serving on Google Ads
+				window.open(window.clickTag, "_blank");
+			} 
+		}
+	</script>
 </head>
 <body>
-<div id="wrapper">
+<div id="wrapper" onclick='clickToLanding();'>
 <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
 <script>
  var googletag = googletag || {};
  googletag.cmd = googletag.cmd || [];
 </script>
-<div id='div-gpt-ad-1679914654323-0' style="width:60vw!important;height: 60vh!important;">
+<div id='div-gpt-ad-1679914654323-0' style="width:60vw!important;height: 60vh!important;pointer-events: none;">
   <script>
     googletag.cmd.push(function() {
     googletag.pubads().display('/21723026843/Programmatic_Testing-Visibility_2023/PM_testing-Visibility_APP_Whiskas_Welcome_640x1400_27Mar23', [640, 1400], 'div-gpt-ad-1679914654323-0');
